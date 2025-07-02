@@ -44,32 +44,39 @@ export const formatDateTime = (dateString: Date | string, timeZone: string = Int
     timeZone: timeZone, // use the provided timezone
   };
 
-  const formattedDateTime: string = new Date(dateString).toLocaleString(
-    "en-US",
-    dateTimeOptions
-  );
+  // const formattedDateTime: string = new Date(dateString).toLocaleString(
+  //   "en-US",
+  //   dateTimeOptions
+  // );
 
-  const formattedDateDay: string = new Date(dateString).toLocaleString(
-    "en-US",
-    dateDayOptions
-  );
+  // const formattedDateDay: string = new Date(dateString).toLocaleString(
+  //   "en-US",
+  //   dateDayOptions
+  // );
 
-  const formattedDate: string = new Date(dateString).toLocaleString(
-    "en-US",
-    dateOptions
-  );
+  // const formattedDate: string = new Date(dateString).toLocaleString(
+  //   "en-US",
+  //   dateOptions
+  // );
 
-  const formattedTime: string = new Date(dateString).toLocaleString(
-    "en-US",
-    timeOptions
-  );
+  // const formattedTime: string = new Date(dateString).toLocaleString(
+  //   "en-US",
+  //   timeOptions
+  // );
 
-  return {
-    dateTime: formattedDateTime,
-    dateDay: formattedDateDay,
-    dateOnly: formattedDate,
-    timeOnly: formattedTime,
-  };
+
+  const dateTime = new Date(dateString).toLocaleString("en-US", dateTimeOptions);
+const dateDay = new Date(dateString).toLocaleString("en-US", dateDayOptions);
+const dateOnly = new Date(dateString).toLocaleString("en-US", dateOptions);
+const timeOnly = new Date(dateString).toLocaleString("en-US", timeOptions);
+
+ 
+return {
+  dateTime,
+  dateDay,
+  dateOnly,
+  timeOnly,
+};
 };
 
 export function encryptKey(passkey: string) {
